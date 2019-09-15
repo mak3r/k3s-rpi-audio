@@ -1,0 +1,13 @@
+{
+  "metadata": {
+      "name": "rpi-audio"
+  },
+  "image":{
+      "image": "rpi-audio-out"
+  },
+  "command": [
+      "/bin/bash"
+  ],
+  "linux": {
+  }
+}
