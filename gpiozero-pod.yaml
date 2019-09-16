@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gpiozero-pod
+spec:
+  selector:
+    matchLabels:
+      app: gpiozero-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gpiozero-pod
+    spec:
+      containers:
+      - name: gpiozero-pod
+        image: mak3r/gpiozero:latest
+        securityContext:
+          privileged: true
+      restartPolicy: Always

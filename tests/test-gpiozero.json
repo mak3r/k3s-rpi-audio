@@ -1,0 +1,13 @@
+{
+  "metadata": {
+      "name": "gpiozero"
+  },
+  "image":{
+      "image": "mak3r/gpiozero:latest"
+  },
+  "command": [
+      "echo hello"
+  ],
+  "linux": {
+  }
+}
