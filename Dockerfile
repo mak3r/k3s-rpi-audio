@@ -1,12 +1,13 @@
-FROM raspbian/stretch
+FROM debian:buster-slim
 
 RUN apt-get update && \
 apt-get upgrade -y && \
 apt-get install -y alsa-utils
 
-WORKDIR audio-files
-COPY ./audio-files audio-files 
+WORKDIR app 
+COPY audio-files/. .
+COPY scripts/. .
 
-ENTRYPOINT ["speaker-test", "-c2", "-s", "2", "--test=wav", "-w"] 
+ENTRYPOINT ["/app/play_audio.sh"]
 
-CMD ["/audio-files/CowMoo5.wav"]
+CMD ["100", "/app/CowMoo5.wav"]
